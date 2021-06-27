@@ -160,7 +160,7 @@ if __name__ == "__main__":
     patch_size = 12
     K = 628
     iter = 20
-    load_path = '/home/zkyg/workspace/ljy/shredder-v2-self-supervised/matrix_analysis/Train/'
+    load_path = './Train/'
     mission = K_SVD(num_img, load_path, patch_size)
     train_data = mission.load_new_data()
     final_dic = mission.train(train_data, K, iter)
@@ -169,10 +169,10 @@ if __name__ == "__main__":
     num_test_imgs_per_file = 7
     test_data_list = []
     for i in range(len(loss)):
-        path = '/home/zkyg/workspace/ljy/shredder-v2-self-supervised/matrix_analysis/TestData_new/Test_' + str(loss[i]) + 'loss/'
+        path = './TestData_new/Test_' + str(loss[i]) + 'loss/'
         test_data = mission.load_test_data(path, num_test_imgs_per_file)
         test_data_list.append(test_data)
-    result_file = '/home/zkyg/workspace/ljy/shredder-v2-self-supervised/matrix_analysis/patch_size=12/loss_'
+    result_file = './patch_size=12/loss_'
     mission.test(final_dic, test_data_list, result_file, loss)
     
 
