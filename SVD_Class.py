@@ -52,10 +52,10 @@ class SVD(object):
 
 if __name__ == "__main__":
     num_img = 30
-    load_path = '/home/zkyg/workspace/ljy/shredder-v2-self-supervised/matrix_analysis/Train/'
+    load_path = './Train/'
     mission = SVD(num_img, load_path)
     U, S, V_H = mission.svd_decomposition()
-    save_path = '/home/zkyg/workspace/ljy/shredder-v2-self-supervised/matrix_analysis/appro_result/'
+    save_path = './appro_result/'
     mission.reconstruction(save_path)
     print('Reconstruction Done')
 
